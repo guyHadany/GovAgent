@@ -1,6 +1,20 @@
+from page_info import PageInfo
+
 class Explorer:
 
     def inspect(self, page):
+        info = PageInfo()
+
+        info.url = page.url
+        info.title = page.title()
+
+        info.links = page.locator("a").count()
+        info.buttons = page.locator("button").count()
+        info.forms = page.locator("form").count()
+        info.images = page.locator("img").count()
+        info.inputs = page.locator("input").count()
+        info.headings = page.locator("h1, h2, h3, h4, h5, h6").count()
+
         print()
         print("──────── GovAgent Explorer ────────")
         print()
@@ -17,3 +31,5 @@ class Explorer:
         print(
             f"Headings: {page.locator('h1, h2, h3, h4, h5, h6').count()}"
         )
+
+        return info

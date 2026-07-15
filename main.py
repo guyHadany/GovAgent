@@ -11,7 +11,11 @@ def main():
     browser.start()
     browser.open("https://example.com")
     explorer = Explorer()
-    explorer.inspect(browser.page)
+    page_info = explorer.inspect(browser.page)
+    print()
+    print("──────── PageInfo ────────")
+    print(page_info.title)
+    print(page_info.url)
     browser.wait()
 
 
