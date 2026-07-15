@@ -23,4 +23,10 @@ class Navigator:
         for i in range(links.count()):
             link = links.nth(i)
 
-            print(f"{i + 1}. {link.inner_text()}")
+            text = link.inner_text().strip()
+            href = link.get_attribute("href")
+
+            print(f"{i + 1}. {text}")
+            print(f"   {href}")
+    def find_links(self, text):
+        return self.page.locator("a").filter(has_text=text)

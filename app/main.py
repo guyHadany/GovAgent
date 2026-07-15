@@ -15,13 +15,15 @@ def main():
     print()
     print("──────── Links ────────")
     navigator.list_links()
+    matching_links = navigator.find_links("Learn more")
+    print(f"קישורים תואמים: {matching_links.count()}")
     print(f"קיים טקסט Learn more: {navigator.text_exists('Learn more')}")
-    navigator.click_text("Learn more")
-    print(f"עבר אל: {browser.page.url}")
+    #navigator.click_text("Learn more")
+    #print(f"עבר אל: {browser.page.url}")
 
 
-    navigator.go_back()
-    print(f"חזר אל: {browser.page.url}")
+    #navigator.go_back()
+    #print(f"חזר אל: {browser.page.url}")
     
     explorer = Explorer()
     page_info = explorer.inspect(browser.page)
