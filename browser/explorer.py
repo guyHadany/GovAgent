@@ -1,4 +1,4 @@
-from page_info import PageInfo
+from models.page_info import PageInfo
 
 class Explorer:
 
@@ -19,17 +19,14 @@ class Explorer:
         print("──────── GovAgent Explorer ────────")
         print()
 
-        print(f"URL: {page.url}")
-        print(f"Title: {page.title()}")
+        print(f"URL: {info.url}")
+        print(f"Title: {info.title}")
 
-        print(f"Links: {page.locator('a').count()}")
-        print(f"Buttons: {page.locator('button').count()}")
-        print(f"Forms: {page.locator('form').count()}")
-        print(f"Images: {page.locator('img').count()}")
-        print(f"Inputs: {page.locator('input').count()}")
-
-        print(
-            f"Headings: {page.locator('h1, h2, h3, h4, h5, h6').count()}"
-        )
+        print(f"Links: {info.links}")       
+        print(f"Buttons: {info.buttons}")
+        print(f"Forms: {info.forms}")
+        print(f"Images: {info.images}")
+        print(f"Inputs: {info.inputs}")
+        print(f"Headings: {info.headings}")
 
         return info
