@@ -17,3 +17,10 @@ class Navigator:
     def go_back(self):
         self.page.go_back()
         self.page.wait_for_load_state("domcontentloaded")
+    def list_links(self):
+        links = self.page.locator("a")
+
+        for i in range(links.count()):
+            link = links.nth(i)
+
+            print(f"{i + 1}. {link.inner_text()}")
