@@ -12,6 +12,7 @@ def main():
     browser.start()
     browser.open("https://example.com")
     navigator = Navigator(browser.page)
+    print(f"קיים טקסט Learn more: {navigator.text_exists('Learn more')}")
     navigator.click_text("Learn more")
     print(f"עבר אל: {browser.page.url}")
 

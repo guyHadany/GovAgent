@@ -11,6 +11,9 @@ class Navigator:
         self.page.get_by_text(text, exact=True).click()
         self.page.wait_for_load_state("domcontentloaded")
 
+    def text_exists(self, text):
+        return self.page.get_by_text(text, exact=True).count() > 0
+
     def go_back(self):
         self.page.go_back()
         self.page.wait_for_load_state("domcontentloaded")
