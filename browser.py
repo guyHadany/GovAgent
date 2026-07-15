@@ -17,6 +17,8 @@ class Browser:
         )
         page = self.browser.new_page()
         page.goto("https://example.com")
+        print(page.title())
+        page.screenshot(path="output/homepage.png")
 
         print("Browser started.")
         input("Press Enter to close the browser...")
