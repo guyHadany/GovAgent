@@ -13,6 +13,13 @@ def main():
     browser.open("https://example.com")
     navigator = Navigator(browser.page)
     navigator.click_text("Learn more")
+    print(f"עבר אל: {browser.page.url}")
+
+    input("לחצי Enter כדי לחזור...")
+
+    navigator.go_back()
+    print(f"חזר אל: {browser.page.url}")
+    
     explorer = Explorer()
     page_info = explorer.inspect(browser.page)
     print()

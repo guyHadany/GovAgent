@@ -8,3 +8,6 @@ class Navigator:
 
     def click_text(self, text):
         self.page.get_by_text(text, exact=True).click()
+
+    def go_back(self):
+        self.page.go_back()
