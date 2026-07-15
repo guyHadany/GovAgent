@@ -1,9 +1,19 @@
-def get_links(page):
-    links = page.eval_on_selector_all(
-        "a[href]",
-        "elements => elements.map(e => e.href)"
-    )
+class Explorer:
 
-    unique_links = sorted(set(link for link in links if link))
+    def inspect(self, page):
+        print()
+        print("──────── GovAgent Explorer ────────")
+        print()
 
-    return unique_links
+        print(f"URL: {page.url}")
+        print(f"Title: {page.title()}")
+
+        print(f"Links: {page.locator('a').count()}")
+        print(f"Buttons: {page.locator('button').count()}")
+        print(f"Forms: {page.locator('form').count()}")
+        print(f"Images: {page.locator('img').count()}")
+        print(f"Inputs: {page.locator('input').count()}")
+
+        print(
+            f"Headings: {page.locator('h1, h2, h3, h4, h5, h6').count()}"
+        )
