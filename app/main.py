@@ -15,7 +15,6 @@ def main():
     navigator.click_text("Learn more")
     print(f"עבר אל: {browser.page.url}")
 
-    input("לחצי Enter כדי לחזור...")
 
     navigator.go_back()
     print(f"חזר אל: {browser.page.url}")
