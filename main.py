@@ -1,26 +1,14 @@
-from browser import open_browser
-from config import BASE_URL
-from explorer import get_links
+from browser import Browser
 
-print("GovAgent מתחיל...")
 
-playwright, browser, page = open_browser()
+def main():
+    print()
+    print("🟢 GovAgent")
+    print("-------------------------")
 
-page.goto(BASE_URL, wait_until="networkidle")
+    browser = Browser()
+    browser.start()
 
-print("כותרת:")
-print(page.title())
 
-links = get_links(page)
-
-print()
-print(f"נמצאו {len(links)} קישורים:")
-
-for link in links:
-    print(link)
-
-browser.close()
-playwright.stop()
-
-print()
-print("GovAgent הסתיים.")
+if __name__ == "__main__":
+    main()
